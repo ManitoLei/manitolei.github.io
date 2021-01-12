@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://manitolei.github.io</id>
     <title>ManitoLei</title>
-    <updated>2021-01-12T11:59:43.203Z</updated>
+    <updated>2021-01-12T14:35:22.780Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://manitolei.github.io"/>
     <link rel="self" href="https://manitolei.github.io/atom.xml"/>
@@ -10,6 +10,106 @@
     <logo>https://manitolei.github.io/images/avatar.png</logo>
     <icon>https://manitolei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, ManitoLei</rights>
+    <entry>
+        <title type="html"><![CDATA[leetcode]]></title>
+        <id>https://manitolei.github.io/post/leetcode/</id>
+        <link href="https://manitolei.github.io/post/leetcode/">
+        </link>
+        <updated>2021-01-12T14:33:25.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="leetcode刷题-剑指offer数组中重复的数据">Leetcode刷题-剑指Offer（数组中重复的数据）</h1>
+<blockquote>
+<p>找出数组中重复的数字。</p>
+</blockquote>
+<blockquote>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+</blockquote>
+<blockquote>
+<p><strong>示例 1</strong>：</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>：<br>
+[2, 3, 1, 0, 2, 5, 3]<br>
+<strong>输出</strong>：2 或 3</p>
+</blockquote>
+<blockquote>
+<p><strong>限制</strong>：<br>
+2 &lt;= n &lt;= 100000</p>
+</blockquote>
+<hr/>
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof
+<p><span style="color:#777;font-weight:bold;margin-top:50px;">我提交的代码（好low啊！！！）</span></p>
+<pre><code>public int findRepeatNumber(int[] nums) {
+        //先给数组排序
+        Arrays.sort(nums);
+        //从头and尾开始找重复的数字(判断相邻数字是否存在相等的)
+        for (int i = 0; i &lt; nums.length/2 ; i++) {
+            if(nums[i]==nums[i+1]){
+                return nums[i];
+            }
+            if(nums[nums.length-1-i]==nums[nums.length-1-i-1]){
+                return nums[nums.length-1-i];
+            }
+        }
+        return -1;
+}
+</code></pre>
+<p><span style="font-size:15px;color:#888">关于Arrays.sort()，百度：在数组的数量小于47的情况下使用插入排序，在大于或等于47或少于286会进入快速排序（双轴快排），大于286采用归并排序</span></p>
+<p><span style="color:#777;font-weight:bold;">Leetcode里的题解</span></p>
+<pre><code>//哈希查找
+public static int findRepeatNumber(int[] nums) {
+        Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+        for (int i = 0; i &lt; nums.length ; i++) {
+            if(set.contains(nums[i]))
+                return nums[i];
+            set.add(nums[i]);
+        }
+        return -1;
+}
+
+- 时间复杂度 O(n)
+- 空间复杂度 O(n)
+
+//数组代替哈希表
+public static int findRepeatNumber(int[] nums) {
+        int bucket[] = new int[nums.length];
+        Arrays.fill(bucket,-1);
+        for (int i = 0; i &lt; nums.length; i++) {
+            if(bucket[nums[i]]!=-1)
+                return nums[i];
+            bucket[nums[i]]=i;
+        }
+        return -1;
+} 
+/*
+	题目：在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内
+*/
+
+- 时间复杂度 O(n)
+- 空间复杂度 O(n)
+//哈希和数组比较：略
+
+//最优解法
+public static int findRepeatNumber4(int[] nums) {
+        for (int i = 0; i &lt; nums.length ; i++) {
+            while(i!=nums[i]){
+                if(nums[i]==nums[nums[i]])
+                    return nums[i];
+                int tmp=nums[nums[i]];
+                nums[nums[i]]=nums[i];
+                nums[i]=tmp;
+            }
+        }
+        return -1;
+}
+//woohoo，这个绝了，我这脑子想不出来就对了。
+
+- 时间复杂度 O(n)
+- 空间复杂度 O(1)
+    
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://manitolei.github.io/post/hello-gridea/</id>

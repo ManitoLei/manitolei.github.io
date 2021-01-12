@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>leetcode | ManitoLei</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://manitolei.github.io/favicon.ico?v=1610462107643">
+<link rel="stylesheet" href="https://manitolei.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Leetcode刷题-剑指Offer（数组中重复的数据）
+
+找出数组中重复的数字。
+
+
+在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://manitolei.github.io">
+        <img src="https://manitolei.github.io/images/avatar.png?v=1610462107643" class="site-logo">
+        <h1 class="site-title">ManitoLei</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Fool's blog.
+    </div>
+    <div class="site-footer">
+       | <a class="rss" href="https://manitolei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">leetcode</h2>
+            <div class="post-date">2021-01-12</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="leetcode刷题-剑指offer数组中重复的数据">Leetcode刷题-剑指Offer（数组中重复的数据）</h1>
+<blockquote>
+<p>找出数组中重复的数字。</p>
+</blockquote>
+<blockquote>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。</p>
+</blockquote>
+<blockquote>
+<p><strong>示例 1</strong>：</p>
+</blockquote>
+<blockquote>
+<p><strong>输入</strong>：<br>
+[2, 3, 1, 0, 2, 5, 3]<br>
+<strong>输出</strong>：2 或 3</p>
+</blockquote>
+<blockquote>
+<p><strong>限制</strong>：<br>
+2 &lt;= n &lt;= 100000</p>
+</blockquote>
+<hr/>
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof
+<p><span style="color:#777;font-weight:bold;margin-top:50px;">我提交的代码（好low啊！！！）</span></p>
+<pre><code>public int findRepeatNumber(int[] nums) {
+        //先给数组排序
+        Arrays.sort(nums);
+        //从头and尾开始找重复的数字(判断相邻数字是否存在相等的)
+        for (int i = 0; i &lt; nums.length/2 ; i++) {
+            if(nums[i]==nums[i+1]){
+                return nums[i];
+            }
+            if(nums[nums.length-1-i]==nums[nums.length-1-i-1]){
+                return nums[nums.length-1-i];
+            }
+        }
+        return -1;
+}
+</code></pre>
+<p><span style="font-size:15px;color:#888">关于Arrays.sort()，百度：在数组的数量小于47的情况下使用插入排序，在大于或等于47或少于286会进入快速排序（双轴快排），大于286采用归并排序</span></p>
+<p><span style="color:#777;font-weight:bold;">Leetcode里的题解</span></p>
+<pre><code>//哈希查找
+public static int findRepeatNumber(int[] nums) {
+        Set&lt;Integer&gt; set = new HashSet&lt;Integer&gt;();
+        for (int i = 0; i &lt; nums.length ; i++) {
+            if(set.contains(nums[i]))
+                return nums[i];
+            set.add(nums[i]);
+        }
+        return -1;
+}
+
+- 时间复杂度 O(n)
+- 空间复杂度 O(n)
+
+//数组代替哈希表
+public static int findRepeatNumber(int[] nums) {
+        int bucket[] = new int[nums.length];
+        Arrays.fill(bucket,-1);
+        for (int i = 0; i &lt; nums.length; i++) {
+            if(bucket[nums[i]]!=-1)
+                return nums[i];
+            bucket[nums[i]]=i;
+        }
+        return -1;
+} 
+/*
+	题目：在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内
+*/
+
+- 时间复杂度 O(n)
+- 空间复杂度 O(n)
+//哈希和数组比较：略
+
+//最优解法
+public static int findRepeatNumber4(int[] nums) {
+        for (int i = 0; i &lt; nums.length ; i++) {
+            while(i!=nums[i]){
+                if(nums[i]==nums[nums[i]])
+                    return nums[i];
+                int tmp=nums[nums[i]];
+                nums[nums[i]]=nums[i];
+                nums[i]=tmp;
+            }
+        }
+        return -1;
+}
+//woohoo，这个绝了，我这脑子想不出来就对了。
+
+- 时间复杂度 O(n)
+- 空间复杂度 O(1)
+    
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://manitolei.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
