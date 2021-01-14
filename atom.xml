@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://manitolei.github.io</id>
     <title>ManitoLei</title>
-    <updated>2021-01-12T14:35:22.780Z</updated>
+    <updated>2021-01-14T12:02:12.577Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://manitolei.github.io"/>
     <link rel="self" href="https://manitolei.github.io/atom.xml"/>
@@ -11,12 +11,13 @@
     <icon>https://manitolei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, ManitoLei</rights>
     <entry>
-        <title type="html"><![CDATA[leetcode]]></title>
+        <title type="html"><![CDATA[咸鱼刷题[Leetcode]]]></title>
         <id>https://manitolei.github.io/post/leetcode/</id>
         <link href="https://manitolei.github.io/post/leetcode/">
         </link>
         <updated>2021-01-12T14:33:25.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="leetcode刷题-剑指offer数组中重复的数据">Leetcode刷题-剑指Offer（数组中重复的数据）</h1>
+        <content type="html"><![CDATA[<p>//终于开始学习了！( ╯▽╰)</p>
+<h1 id="leetcode刷题-剑指offer数组中重复的数据">Leetcode刷题-剑指Offer（数组中重复的数据）</h1>
 <blockquote>
 <p>找出数组中重复的数字。</p>
 </blockquote>
