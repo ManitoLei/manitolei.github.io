@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://manitolei.github.io</id>
     <title>ManitoLei</title>
-    <updated>2021-01-28T07:33:15.648Z</updated>
+    <updated>2021-04-14T07:37:43.833Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://manitolei.github.io"/>
     <link rel="self" href="https://manitolei.github.io/atom.xml"/>
@@ -11,6 +11,15 @@
     <icon>https://manitolei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, ManitoLei</rights>
     <entry>
+        <title type="html"><![CDATA[佩奇]]></title>
+        <id>https://manitolei.github.io/post/pei-qi/</id>
+        <link href="https://manitolei.github.io/post/pei-qi/">
+        </link>
+        <updated>2021-04-14T06:32:59.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2021/04/14/inp1x2OPqAKMNs6.jpg" alt="xzpq.jpg" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[《MySQL必知必会》-Ben Forta]]></title>
         <id>https://manitolei.github.io/post/lesslessmysql-bi-zhi-bi-hui-greatergreater-ben-forta/</id>
         <link href="https://manitolei.github.io/post/lesslessmysql-bi-zhi-bi-hui-greatergreater-ben-forta/">
@@ -18,6 +27,7 @@
         <updated>2021-01-28T07:00:54.000Z</updated>
         <content type="html"><![CDATA[<p>SQL-Structured Query Language-结构化查询语言<br>
 <img src="https://raw.githubusercontent.com/ManitoLei/Picbed_Picgo/main/20210128153155.png" alt="" loading="lazy"><br>
+<img src="https://raw.githubusercontent.com/ManitoLei/Picbed_Picgo/main/20210129162421.png" alt="" loading="lazy"><br>
 show databases;<br>
 //显示可用的数据库<br>
 use database_name;<br>
